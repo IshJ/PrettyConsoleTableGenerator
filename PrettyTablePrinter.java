@@ -50,6 +50,8 @@ public class PrettyTablePrinter {
     private static boolean validateInputs(List<String> headers, List<String> rows, String columnSeparator) {
         if (headers.isEmpty()) {
             System.out.println("empty headers!");
+            return false;
+
         }
         int columnCount = headers.size();
         boolean isRightRowFormat = rows.stream().noneMatch(r->r.split(columnSeparator).length!=columnCount);
